@@ -242,9 +242,9 @@ export default function Leadership() {
           viewport={{ once: true }}
           className="mt-24 text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white"
         >
-          <h3 className="text-4xl font-bold mb-4">Ready to Transform Your Engineering Team?</h3>
+          <h3 className="text-4xl font-bold mb-4">Driving Engineering Excellence Through AI & Leadership</h3>
           <p className="text-xl mb-8 opacity-90">
-            Let&apos;s discuss how AI and technical excellence can drive measurable impact for your organization
+            Explore how my experience in scaling teams and delivering measurable impact aligns with your organization&apos;s goals.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
@@ -266,14 +266,14 @@ export default function Leadership() {
               Send Email
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/in/artem-antonenko-al/"
+              href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=artem-antonenko-al"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
-              LinkedIn Profile
+              Follow me on LinkedIn
             </motion.a>
           </div>
         </motion.div>
