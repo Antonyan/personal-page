@@ -28,8 +28,8 @@ export default function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg'
+        scrolled || mobileMenuOpen
+          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
     >
@@ -98,13 +98,13 @@ export default function Navigation() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden pb-4"
+            className="md:hidden pb-4 pt-2 border-t border-gray-200 dark:border-gray-700"
           >
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                className="block py-3 px-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -114,7 +114,7 @@ export default function Navigation() {
               href="https://calendly.com/antonenko-artem/interview"
               target="_blank"
               rel="noopener noreferrer"
-              className="block mt-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-center"
+              className="block mt-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-center hover:shadow-lg transition-shadow"
               onClick={() => setMobileMenuOpen(false)}
             >
               Schedule a Call
