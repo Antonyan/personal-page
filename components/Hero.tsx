@@ -21,23 +21,23 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6"
+          className="space-y-4 md:space-y-6 order-2 md:order-1"
         >
           <motion.h1
-            className="text-4xl md:text-5xl font-bold leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -50,9 +50,9 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="h-20"
+            className="h-16 md:h-20"
           >
-            <p className="text-2xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
               <motion.span
                 key={currentRole}
                 initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.p
-            className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
+            className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
@@ -107,22 +107,22 @@ export default function Hero() {
 
           {/* Quick Stats */}
           <motion.div
-            className="grid grid-cols-3 gap-6 pt-8"
+            className="grid grid-cols-3 gap-4 md:gap-6 pt-4 md:pt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
           >
             <div>
-              <div className="text-3xl font-bold gradient-text">500+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Professionals Led</div>
+              <div className="text-2xl md:text-3xl font-bold gradient-text">500+</div>
+              <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400">Professionals Led</div>
             </div>
             <div>
-              <div className="text-3xl font-bold gradient-text">8x</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">ROI Delivered</div>
+              <div className="text-2xl md:text-3xl font-bold gradient-text">8x</div>
+              <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400">ROI Delivered</div>
             </div>
             <div>
-              <div className="text-3xl font-bold gradient-text">70%</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Workload Reduction</div>
+              <div className="text-2xl md:text-3xl font-bold gradient-text">70%</div>
+              <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400">Workload Reduction</div>
             </div>
           </motion.div>
         </motion.div>
@@ -132,7 +132,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex justify-center items-center mt-8 md:mt-0"
+          className="flex justify-center items-center order-1 md:order-2"
         >
           <div className="relative">
             {/* Animated background glow */}
@@ -153,7 +153,7 @@ export default function Hero() {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="relative w-[280px] h-[340px] sm:w-[350px] sm:h-[430px] md:w-[450px] md:h-[550px] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1"
+              className="relative w-[240px] h-[290px] sm:w-[300px] sm:h-[370px] md:w-[450px] md:h-[550px] rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1"
             >
               <div className="w-full h-full rounded-3xl overflow-hidden bg-white dark:bg-gray-900">
                 <Image
