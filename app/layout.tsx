@@ -3,21 +3,32 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://artem-antonenko.vercel.app'),
-  title: 'Artem Antonenko - AI-Driven Engineering Leader',
-  description: 'Transforming Engineering Teams Through AI Innovation & Technical Excellence. 8x ROI on AI implementations, 300+ engineers led, proven track record in enterprise AI transformation.',
-  keywords: ['AI Leadership', 'Engineering Leadership', 'AI Transformation', 'Machine Learning', 'Tech Lead', 'CTO'],
+  title: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
+  description: 'Engineering Executive specializing in organizational scale, delivery excellence, and AI-enabled performance acceleration. Led 500+ professionals across 12 companies, delivering 8× ROI and measurable business impact through enterprise AI transformation.',
+  keywords: [
+    'Engineering Executive',
+    'Head of Engineering',
+    'CTO',
+    'AI Transformation',
+    'Delivery Excellence',
+    'Organizational Scale',
+    'Technical Leadership',
+    'Enterprise Engineering',
+    'AI Integration',
+    'Technology Strategy'
+  ],
   authors: [{ name: 'Artem Antonenko' }],
   icons: {
     icon: '/favicon.svg',
     apple: '/favicon.svg',
   },
   openGraph: {
-    title: 'Artem Antonenko - Engineering & AI Transformation Executive',
-    description: 'Building High-Performing Engineering Teams and Products, Powered by Practical AI Adoption. Leading 500+ professionals across 12 companies with 8x ROI and 70% workload reduction.',
+    title: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
+    description: 'Engineering Executive specializing in organizational scale, delivery excellence, and AI-enabled performance acceleration. Led 500+ professionals across 12 companies, delivering 8× ROI and measurable business impact.',
     type: 'website',
     locale: 'en_US',
     url: 'https://artem-antonenko.vercel.app',
-    siteName: 'Artem Antonenko - Engineering Portfolio',
+    siteName: 'Artem Antonenko - Engineering Executive Portfolio',
     images: [
       {
         url: '/og-image.svg',
@@ -30,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Artem Antonenko - Engineering & AI Transformation Executive',
-    description: 'Building High-Performing Engineering Teams with Practical AI Adoption. 500+ professionals led, 8x ROI, 70% workload reduction.',
+    title: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
+    description: 'Engineering Executive specializing in organizational scale, delivery excellence, and AI-enabled performance acceleration. 500+ professionals led, 8× ROI.',
     images: ['/og-image.svg'],
   },
   robots: {
