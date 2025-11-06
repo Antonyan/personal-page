@@ -132,7 +132,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="hidden md:flex justify-center items-center"
+          className="flex justify-center items-center mt-8 md:mt-0"
         >
           <div className="relative">
             {/* Animated background glow */}
@@ -153,7 +153,7 @@ export default function Hero() {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="relative w-[450px] h-[550px] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1"
+              className="relative w-[280px] h-[340px] sm:w-[350px] sm:h-[430px] md:w-[450px] md:h-[550px] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1"
             >
               <div className="w-full h-full rounded-3xl overflow-hidden bg-white dark:bg-gray-900">
                 <Image
