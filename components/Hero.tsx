@@ -21,14 +21,14 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 md:pt-20 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div className="w-full max-w-[1400px] mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -132,7 +132,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex justify-center items-start order-1 md:order-2 md:items-center -mt-8 md:mt-0"
+          className="flex justify-center items-center order-1 md:order-2"
         >
           <div className="relative">
             {/* Animated background glow - reduced opacity on mobile */}
@@ -149,11 +149,11 @@ export default function Hero() {
               className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-3xl blur-3xl md:opacity-100"
             />
 
-            {/* Photo container with gradient border - desaturated on mobile */}
+            {/* Photo container with gradient border - full width on mobile */}
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="relative w-[240px] h-[290px] sm:w-[300px] sm:h-[370px] md:w-[450px] md:h-[550px] rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-blue-400/70 via-purple-400/70 to-pink-400/70 md:from-blue-500 md:via-purple-500 md:to-pink-500 p-1"
+              className="relative w-full h-[400px] sm:w-[300px] sm:h-[370px] md:w-[450px] md:h-[550px] rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-blue-400/70 via-purple-400/70 to-pink-400/70 md:from-blue-500 md:via-purple-500 md:to-pink-500 p-1"
             >
               <div className="w-full h-full rounded-3xl overflow-hidden bg-white dark:bg-gray-900">
                 <Image
