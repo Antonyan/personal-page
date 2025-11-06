@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Transforming Engineering Teams Through AI Innovation & Technical Excellence. 8x ROI on AI implementations, 300+ engineers led, proven track record in enterprise AI transformation.',
   keywords: ['AI Leadership', 'Engineering Leadership', 'AI Transformation', 'Machine Learning', 'Tech Lead', 'CTO'],
   authors: [{ name: 'Artem Antonenko' }],
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'Artem Antonenko - AI-Driven Engineering Leader',
     description: 'Transforming Engineering Teams Through AI Innovation & Technical Excellence',
