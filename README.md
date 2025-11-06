@@ -119,9 +119,9 @@ This project is for portfolio purposes. Feel free to use as inspiration for your
 
 ## Contact
 
-- **Email**: your.email@example.com
-- **LinkedIn**: [Your Profile](https://linkedin.com/in/yourprofile)
-- **GitHub**: [Your Profile](https://github.com/yourprofile)
+- **Email**: antonenko.artem@gmail.com
+- **LinkedIn**: [Artem Antonenko](https://www.linkedin.com/in/artem-antonenko-al/)
+- **GitHub**: [Antonyan](https://github.com/Antonyan)
 
 ---
 

@@ -88,11 +88,11 @@
 
 ### No Environment Variables Required
 This portfolio doesn't require any environment variables. All configuration is hardcoded for public information:
-- Contact email: antonenko.artem@gmail.com
+- Email: antonenko.artem@gmail.com
 - LinkedIn: https://www.linkedin.com/in/artem-antonenko-al/
-- Calendly: https://calendly.com/antonenko-artem/interview
 - GitHub: https://github.com/Antonyan
 - Telegram: @mgmtAndArch
+- Calendly: https://calendly.com/antonenko-artem/interview
 
 ---
 
@@ -261,8 +261,9 @@ npm run build
 - [Custom Domains](https://vercel.com/docs/custom-domains)
 
 ### Project Links
-- GitHub: https://github.com/Antonyan
+- Email: antonenko.artem@gmail.com
 - LinkedIn: https://www.linkedin.com/in/artem-antonenko-al/
+- GitHub: https://github.com/Antonyan
 
 ---
 
