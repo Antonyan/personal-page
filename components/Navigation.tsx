@@ -67,7 +67,7 @@ export default function Navigation() {
             whileTap={{ scale: 0.95 }}
             className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-shadow"
           >
-            Schedule a Call
+            Let&apos;s Connect
           </motion.a>
 
           {/* Mobile Menu Button */}
@@ -117,7 +117,7 @@ export default function Navigation() {
               className="block mt-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-center hover:shadow-lg transition-shadow"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Schedule a Call
+              Let&apos;s Connect
             </a>
           </motion.div>
         )}

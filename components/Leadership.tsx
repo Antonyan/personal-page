@@ -255,7 +255,7 @@ export default function Leadership() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-white text-blue-600 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow"
             >
-              Schedule a Call
+              Let&apos;s Connect
             </motion.a>
             <motion.a
               href="mailto:antonenko.artem@gmail.com"
