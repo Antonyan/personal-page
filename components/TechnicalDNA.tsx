@@ -30,29 +30,6 @@ const techStack = {
   ],
 }
 
-const architecturePatterns = [
-  {
-    name: 'Fractal Architecture',
-    description: 'Modular, self-similar architecture pattern enabling team autonomy',
-    usedIn: 'Enterprise migration (2 years, 300+ engineers)',
-  },
-  {
-    name: 'RAG (Retrieval-Augmented Generation)',
-    description: 'AI architecture combining retrieval and generation for accurate responses',
-    usedIn: 'Knowledge Management Chatbot, Text-to-SQL Agent',
-  },
-  {
-    name: 'Bubble Approach',
-    description: 'Incremental migration strategy isolating changes in bounded contexts',
-    usedIn: 'Monolith to Modular transformation',
-  },
-  {
-    name: 'Event-Driven Architecture',
-    description: 'Asynchronous communication pattern for scalable distributed systems',
-    usedIn: 'Microservices implementation with Kafka',
-  },
-]
-
 export default function TechnicalDNA() {
   const [selectedCategory, setSelectedCategory] = useState('AI & Machine Learning')
 
@@ -138,51 +115,6 @@ export default function TechnicalDNA() {
             ))}
           </motion.div>
         </div>
-
-        {/* Architecture Patterns */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-24"
-        >
-          <h3 className="text-3xl font-bold text-center mb-12">
-            Architecture <span className="gradient-text">Patterns & Frameworks</span>
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {architecturePatterns.map((pattern, index) => (
-              <motion.div
-                key={pattern.name}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700"
-              >
-                <div className="flex items-start mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-xl mr-4">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">{pattern.name}</h4>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      {pattern.description}
-                    </p>
-                    <div className="text-sm">
-                      <span className="text-gray-500 dark:text-gray-500 font-semibold">
-                        Used in:{' '}
-                      </span>
-                      <span className="text-blue-600 dark:text-blue-400">{pattern.usedIn}</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Tools & Technologies Cloud */}
         <motion.div

@@ -53,7 +53,6 @@ export default function Hero() {
             className="h-20"
           >
             <p className="text-2xl text-gray-600 dark:text-gray-400">
-              I&apos;m an{' '}
               <motion.span
                 key={currentRole}
                 initial={{ opacity: 0, y: 20 }}

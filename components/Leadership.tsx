@@ -4,49 +4,49 @@ import { motion } from 'framer-motion'
 
 const leadershipPrinciples = [
   {
-    title: 'Shuhari Framework',
-    description: 'Progressive mentorship model: Shu (follow), Ha (adapt), Ri (transcend)',
-    impact: 'Developed 15 autonomous engineers capable of independent decision-making',
+    title: 'Empower Through Structure and Autonomy',
+    description: 'I believe that clarity and autonomy are not opposites — they amplify each other. By creating clear frameworks (e.g., Feature Responsible, Technical Responsible, Genie RBA), I empower engineers to own delivery end-to-end while removing micromanagement.',
+    impact: 'Structure creates freedom.',
     icon: '🎯',
   },
   {
-    title: 'Feature Responsible Model',
-    description: 'Empowering engineers with end-to-end ownership of features',
-    impact: 'Increased delivery predictability from 50% to 87%',
-    icon: '🚀',
-  },
-  {
-    title: 'ADRs & Documentation',
-    description: 'Architecture Decision Records for transparent, reversible decisions',
-    impact: 'Created knowledge base for 300+ engineers across 12 companies',
-    icon: '📚',
-  },
-  {
-    title: 'Metrics-Driven Transformation',
-    description: 'Quantifying impact and ROI at every stage of transformation',
-    impact: '8x ROI on AI implementation with measurable KPIs',
+    title: 'Lead with Data, Learn with Reflection',
+    description: 'Effective leadership is both analytical and introspective. I rely on data — delivery metrics, team feedback, and measurable outcomes — but balance it with reflective learning practices like retrospectives and issue logs.',
+    impact: 'Every iteration is an opportunity to learn, not just to deliver.',
     icon: '📊',
+  },
+  {
+    title: 'Grow People Before Processes',
+    description: 'High-performing teams come from growing individuals first. I focus on personalized development (using GROW and SCARF models), helping engineers overcome imposter syndrome, build confidence, and evolve into leaders.',
+    impact: 'When people grow, delivery excellence follows naturally.',
+    icon: '🌱',
+  },
+  {
+    title: 'Build Resilience Through Continuous Improvement',
+    description: 'Sustainable success depends on adaptability. I cultivate a culture where feedback loops, automation (RBA), and post-mortems are part of daily practice — making teams resilient, self-correcting, and ready for change rather than reactive to it.',
+    impact: 'Continuous improvement builds lasting resilience.',
+    icon: '🔄',
   },
 ]
 
 const testimonials = [
   {
-    quote: 'Artem transformed our engineering organization, implementing AI tools that delivered 8x ROI while maintaining team morale and autonomy.',
-    author: 'Engineering Director',
-    company: 'Enterprise Tech Company',
-    role: 'Leadership Impact',
+    quote: 'Artem leads with clarity and data. He ensures his teams are not just aligned on what needs to be done, but also why it matters. He has an exceptional ability to break down complex tasks, explain technical concepts clearly, and keep everyone focused on impact. What sets Artem apart is his eagerness to learn and adopt. He\'s also a remarkable people leader with direct communication, and what truly impressed me is how open he is to feedback and how fast he acts on it.',
+    author: 'Mihai Popescu-Anghel',
+    company: 'Lead IT Project Manager',
+    role: 'Worked together 6 years',
   },
   {
-    quote: 'The Fractal Architecture migration was executed flawlessly. Delivery predictability improved from 50% to 87% over 2 years.',
-    author: 'CTO',
-    company: 'SaaS Platform',
-    role: 'Technical Excellence',
+    quote: 'From an engineer\'s perspective, Artem consistently stood out as a manager who combined clear strategic vision with strong technical grounding. He created an environment where engineering decisions were well-aligned with business goals while still leaving space for individual ownership and innovation. What I appreciated most was his ability to mentor across levels—from developers to engineering managers—and to drive organizational improvements that had tangible positive impact on day-to-day engineering work.',
+    author: 'Ilya Pokamestov',
+    company: 'Solution Architect | Technical Lead',
+    role: 'Reported directly to Artem',
   },
   {
-    quote: 'His mentorship approach using the Shuhari framework created truly autonomous engineers. Best investment in our team development.',
-    author: 'VP of Engineering',
-    company: 'Startup',
-    role: 'Team Development',
+    quote: 'Artem is a unique profile with his deep knowledge of software development, engineering management, architecture and discipline. He\'s passionate about deliveries, bringing new ideas on board and improving procedures and systems. I like that he\'s raising red flags on time before a problem turns to crisis. He protective about his team and has very close and positive communication with them. Artem is always high motivated, result oriented, continuously improving leader.',
+    author: 'Serhan Kiymaz',
+    company: 'CTO @ Governance.com',
+    role: 'Managed Artem directly',
   },
 ]
 
@@ -100,7 +100,7 @@ export default function Leadership() {
             Leadership <span className="gradient-text">Philosophy</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Building high-performing teams through empowerment, mentorship, and measurable outcomes
+            Building high-performing teams through empowerment, coaching, mentorship, and measurable outcomes
           </p>
         </motion.div>
 
@@ -138,10 +138,10 @@ export default function Leadership() {
           className="mb-24"
         >
           <h3 className="text-3xl font-bold text-center mb-12">
-            What <span className="gradient-text">Leaders Say</span>
+            What <span className="gradient-text">Colleagues Say</span>
           </h3>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
@@ -166,6 +166,21 @@ export default function Leadership() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          <div className="text-center">
+            <motion.a
+              href="https://www.linkedin.com/in/artem-antonenko-al/details/recommendations/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:underline"
+            >
+              Read more recommendations on LinkedIn
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </motion.a>
           </div>
         </motion.div>
 
