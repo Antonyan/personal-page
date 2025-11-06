@@ -119,8 +119,8 @@ export default function Leadership() {
               <div className="text-5xl mb-4">{principle.icon}</div>
               <h3 className="text-2xl font-bold mb-3">{principle.title}</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">{principle.description}</p>
-              <div className="flex items-start">
-                <span className="text-green-500 mr-2 mt-1">✓</span>
+              <div className="flex items-center">
+                <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
                 <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">
                   {principle.impact}
                 </p>
