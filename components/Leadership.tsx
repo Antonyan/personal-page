@@ -248,10 +248,20 @@ export default function Leadership() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
-              href="mailto:antonenko.artem@gmail.com"
+              href="https://calendly.com/antonenko-artem/interview"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-white text-blue-600 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow"
+            >
+              Schedule a Call
+            </motion.a>
+            <motion.a
+              href="mailto:antonenko.artem@gmail.com"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
               Send Email
             </motion.a>
@@ -264,16 +274,6 @@ export default function Leadership() {
               className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
               LinkedIn Profile
-            </motion.a>
-            <motion.a
-              href="https://calendly.com/antonenko-artem/interview"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-colors"
-            >
-              Schedule a Call
             </motion.a>
           </div>
         </motion.div>

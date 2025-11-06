@@ -37,16 +37,16 @@ const caseStudies = [
   },
   {
     id: 3,
-    title: 'Enterprise AI Coding Tools Implementation',
+    title: 'Enterprise AI Engineering Enablement Program',
     challenge: 'Transform 300+ engineers across 12 companies with AI-assisted development',
-    solution: 'Strategic rollout of AI coding tools with training, best practices, and ROI tracking',
+    solution: 'Strategic rollout of AI engineering enablement program with training, best practices, and ROI tracking',
     impact: [
       '8x ROI on implementation',
       '22% of engineers saving 2-3 hours daily',
       '300+ engineers onboarded',
       'Measurable productivity gains',
     ],
-    tech: ['AI Coding Tools', 'Change Management', 'Training Programs', 'Analytics'],
+    tech: ['AI Engineering Enablement', 'Change Management', 'Training Programs', 'Analytics'],
     category: 'AI',
     color: 'from-blue-500 to-cyan-500',
   },
@@ -523,10 +523,12 @@ export default function CaseStudies() {
           className="text-center mt-16"
         >
           <a
-            href="#contact"
+            href="https://www.linkedin.com/in/artem-antonenko-al/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow"
           >
-            Discuss Your Project
+            Let&apos;s Connect
           </a>
         </motion.div>
       </div>

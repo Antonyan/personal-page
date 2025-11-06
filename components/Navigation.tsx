@@ -60,14 +60,14 @@ export default function Navigation() {
 
           {/* CTA Button */}
           <motion.a
-            href="https://www.linkedin.com/in/artem-antonenko-al/"
+            href="https://calendly.com/antonenko-artem/interview"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-shadow"
           >
-            Let&apos;s Talk
+            Schedule a Call
           </motion.a>
 
           {/* Mobile Menu Button */}
@@ -111,13 +111,13 @@ export default function Navigation() {
               </a>
             ))}
             <a
-              href="https://www.linkedin.com/in/artem-antonenko-al/"
+              href="https://calendly.com/antonenko-artem/interview"
               target="_blank"
               rel="noopener noreferrer"
               className="block mt-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Let&apos;s Talk
+              Schedule a Call
             </a>
           </motion.div>
         )}

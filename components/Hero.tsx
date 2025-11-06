@@ -76,27 +76,32 @@ export default function Hero() {
             through strategic AI implementation and technical excellence.
           </motion.p>
 
+          {/* CTA Buttons - UX Hierarchy: Primary (filled) drives main business objective, Secondary (outlined) offers low-commitment exploration */}
           <motion.div
             className="flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
+            {/* Primary CTA: LinkedIn connection - Main business objective for conversation initiation */}
             <motion.a
-              href="#case-studies"
+              href="https://www.linkedin.com/in/artem-antonenko-al/"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow"
             >
-              View Case Studies
+              Let&apos;s Connect
             </motion.a>
+            {/* Secondary CTA: Case studies - Low-commitment option for users not ready to engage directly */}
             <motion.a
-              href="#contact"
+              href="#case-studies"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-full font-semibold hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
             >
-              Let&apos;s Connect
+              View Case Studies
             </motion.a>
           </motion.div>
 
