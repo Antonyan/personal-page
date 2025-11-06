@@ -132,28 +132,28 @@ export default function Hero() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex justify-center items-center order-1 md:order-2"
+          className="flex justify-center items-start order-1 md:order-2 md:items-center -mt-8 md:mt-0"
         >
           <div className="relative">
-            {/* Animated background glow */}
+            {/* Animated background glow - reduced opacity on mobile */}
             <motion.div
               animate={{
                 scale: [1, 1.1, 1],
-                opacity: [0.3, 0.5, 0.3],
+                opacity: [0.2, 0.3, 0.2],
               }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
-              className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-3xl blur-3xl"
+              className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-3xl blur-3xl md:opacity-100"
             />
 
-            {/* Photo container with gradient border */}
+            {/* Photo container with gradient border - desaturated on mobile */}
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="relative w-[240px] h-[290px] sm:w-[300px] sm:h-[370px] md:w-[450px] md:h-[550px] rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1"
+              className="relative w-[240px] h-[290px] sm:w-[300px] sm:h-[370px] md:w-[450px] md:h-[550px] rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-blue-400/70 via-purple-400/70 to-pink-400/70 md:from-blue-500 md:via-purple-500 md:to-pink-500 p-1"
             >
               <div className="w-full h-full rounded-3xl overflow-hidden bg-white dark:bg-gray-900">
                 <Image
