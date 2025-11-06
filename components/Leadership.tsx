@@ -248,7 +248,7 @@ export default function Leadership() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
-              href="https://calendly.com/antonenko-artem/interview"
+              href="https://www.linkedin.com/in/artem-antonenko-al/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

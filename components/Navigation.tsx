@@ -60,7 +60,7 @@ export default function Navigation() {
 
           {/* CTA Button */}
           <motion.a
-            href="https://calendly.com/antonenko-artem/interview"
+            href="https://www.linkedin.com/in/artem-antonenko-al/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -111,7 +111,7 @@ export default function Navigation() {
               </a>
             ))}
             <a
-              href="https://calendly.com/antonenko-artem/interview"
+              href="https://www.linkedin.com/in/artem-antonenko-al/"
               target="_blank"
               rel="noopener noreferrer"
               className="block mt-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-center hover:shadow-lg transition-shadow"
