@@ -147,11 +147,11 @@ export default function Footer() {
               © {currentYear} Artem Antonenko. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="hover:text-blue-400 transition-colors">
+              <a href="/privacy" className="hover:text-blue-400 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-blue-400 transition-colors">
-                Terms of Service
+              <a href="/terms" className="hover:text-blue-400 transition-colors">
+                Terms of Use
               </a>
             </div>
           </div>
