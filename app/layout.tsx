@@ -3,9 +3,9 @@ import './globals.css'
 import CookieConsent from '@/components/CookieConsent'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://artem-antonenko.vercel.app'),
+  metadataBase: new URL('https://www.artem-antonenko.com'),
   title: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
-  description: 'Engineering Executive specializing in organizational scale, delivery excellence, and AI-enabled performance acceleration. Led 500+ professionals across 12 companies, delivering 8× ROI and measurable business impact through enterprise AI transformation.',
+  description: 'Engineering Executive specializing in organizational scale, delivery excellence, and AI-enabled performance acceleration. Led 500+ professionals across 12 companies, delivering 8× ROI and measurable business impact.',
   keywords: [
     'Engineering Executive',
     'Head of Engineering',
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     description: 'Engineering Executive specializing in organizational scale, delivery excellence, and AI-enabled performance acceleration. Led 500+ professionals across 12 companies, delivering 8× ROI and measurable business impact.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://artem-antonenko.vercel.app',
+    url: 'https://www.artem-antonenko.com',
     siteName: 'Artem Antonenko - Engineering Executive Portfolio',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
-        height: 630,
+        height: 800,
         alt: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
         type: 'image/jpeg',
       },
