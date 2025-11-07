@@ -171,7 +171,7 @@ export default function Hero() {
               <div className="w-full h-full rounded-3xl overflow-hidden bg-white dark:bg-gray-900">
                 <Image
                   src="/images/profile.jpg"
-                  alt="Artem Antonenko - AI-Driven Engineering Leader"
+                  alt="Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance"
                   width={450}
                   height={550}
                   className="object-cover w-full h-full"
