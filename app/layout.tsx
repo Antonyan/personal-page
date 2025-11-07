@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     siteName: 'Artem Antonenko - Engineering Executive Portfolio',
     images: [
       {
-        url: '/og-image.svg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Artem Antonenko - Engineering & AI Transformation Executive',
-        type: 'image/svg+xml',
+        alt: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
     description: 'Engineering Executive specializing in organizational scale, delivery excellence, and AI-enabled performance acceleration. 500+ professionals led, 8× ROI.',
-    images: ['/og-image.svg'],
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,

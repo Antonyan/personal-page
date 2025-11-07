@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, height=630">
+    <title>OG Image Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            overflow: hidden;
+        }
+        .content {
+            flex: 1;
+            max-width: 600px;
+            color: white;
+        }
+        h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            background: linear-gradient(90deg, #60A5FA 0%, #A78BFA 50%, #F472B6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            font-size: 32px;
+            color: #60A5FA;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .stat {
+            flex: 1;
+        }
+        .stat-value {
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #60A5FA 0%, #A78BFA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            font-size: 16px;
+            color: #94A3B8;
+            margin-top: 8px;
+        }
+        .photo-container {
+            width: 420px;
+            height: 470px;
+            position: relative;
+        }
+        .photo-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%);
+            padding: 4px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            background: white;
+        }
+        .glow {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background glow effects -->
+    <div style="position: absolute; top: 20%; left: 10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(60px);"></div>
+
+    <div class="content">
+        <h1>Artem Antonenko</h1>
+        <div class="subtitle">Engineering Executive</div>
+        <p style="font-size: 22px; color: #E2E8F0; line-height: 1.5; margin-bottom: 16px;">
+            Scale, Delivery, and AI-Enabled Performance
+        </p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">500+</div>
+                <div class="stat-label">Professionals</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">8× ROI</div>
+                <div class="stat-label">AI Impact</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Companies</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="photo-container">
+        <div class="glow"></div>
+        <div class="photo-frame">
+            <!-- Replace src with actual path to your profile photo -->
+            <img src="public/images/profile.jpg" alt="Artem Antonenko" class="photo">
+        </div>
+    </div>
+</body>
+</html>
