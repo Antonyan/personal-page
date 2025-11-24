@@ -11,6 +11,7 @@ export default function RagVisualizationPage() {
   const [speed, setSpeed] = useState(1)
   const [currentStep, setCurrentStep] = useState(0)
   const [selectedModule, setSelectedModule] = useState<string | null>(null)
+  const [viewMode, setViewMode] = useState<'simple' | 'production'>('simple')
 
   const handlePlay = () => setIsPlaying(true)
   const handlePause = () => setIsPlaying(false)
@@ -23,19 +24,19 @@ export default function RagVisualizationPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-950 text-white">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link href="/" className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <Link href="/" className="text-xl font-bold bg-gradient-to-r from-cyan-500 to-purple-600 dark:from-cyan-400 dark:to-purple-500 bg-clip-text text-transparent">
               Artem Antonenko
             </Link>
             <div className="flex items-center space-x-6">
-              <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                 Home
               </Link>
-              <span className="text-cyan-400 font-semibold">RAG Pipeline</span>
+              <span className="text-cyan-600 dark:text-cyan-400 font-semibold">RAG Pipeline</span>
             </div>
           </div>
         </div>
@@ -54,10 +55,36 @@ export default function RagVisualizationPage() {
                 Production RAG Pipeline
               </span>
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
               Interactive visualization of Retrieval-Augmented Generation architecture.
               Watch how data flows through each component in real-time.
             </p>
+
+            {/* View Mode Toggle */}
+            <div className="flex justify-center mt-6">
+              <div className="inline-flex bg-gray-200 dark:bg-gray-800 rounded-lg p-1">
+                <button
+                  onClick={() => setViewMode('simple')}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    viewMode === 'simple'
+                      ? 'bg-cyan-500 text-white'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                  }`}
+                >
+                  Simple
+                </button>
+                <button
+                  onClick={() => setViewMode('production')}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    viewMode === 'production'
+                      ? 'bg-cyan-500 text-white'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                  }`}
+                >
+                  Production
+                </button>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -84,6 +111,7 @@ export default function RagVisualizationPage() {
             onStepChange={setCurrentStep}
             selectedModule={selectedModule}
             onModuleSelect={setSelectedModule}
+            viewMode={viewMode}
           />
         </div>
       </div>
@@ -93,14 +121,14 @@ export default function RagVisualizationPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="fixed bottom-0 left-0 right-0 bg-gray-900/95 backdrop-blur-md border-t border-gray-800 p-6 max-h-[40vh] overflow-y-auto"
+          className="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 p-6 max-h-[40vh] overflow-y-auto"
         >
           <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl font-bold text-cyan-400">{selectedModule}</h3>
+              <h3 className="text-xl font-bold text-cyan-600 dark:text-cyan-400">{selectedModule}</h3>
               <button
                 onClick={() => setSelectedModule(null)}
-                className="text-gray-400 hover:text-white"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -198,20 +226,20 @@ prompt = template.format(context=context, query=query)`
   return (
     <div className="grid md:grid-cols-3 gap-6">
       <div>
-        <h4 className="text-sm font-semibold text-gray-400 mb-2">Description</h4>
-        <p className="text-gray-300">{detail.description}</p>
+        <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">Description</h4>
+        <p className="text-gray-700 dark:text-gray-300">{detail.description}</p>
       </div>
       <div>
-        <h4 className="text-sm font-semibold text-gray-400 mb-2">Parameters</h4>
+        <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">Parameters</h4>
         <ul className="space-y-1">
           {detail.params.map((param, i) => (
-            <li key={i} className="text-sm font-mono text-purple-400">{param}</li>
+            <li key={i} className="text-sm font-mono text-purple-600 dark:text-purple-400">{param}</li>
           ))}
         </ul>
       </div>
       <div>
-        <h4 className="text-sm font-semibold text-gray-400 mb-2">Code</h4>
-        <pre className="text-sm font-mono text-green-400 bg-gray-800 p-3 rounded-lg overflow-x-auto">
+        <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">Code</h4>
+        <pre className="text-sm font-mono text-green-600 dark:text-green-400 bg-gray-100 dark:bg-gray-800 p-3 rounded-lg overflow-x-auto">
           {detail.code}
         </pre>
       </div>

@@ -73,6 +73,23 @@ export default function Tooltip({ term, explanation }: TooltipProps) {
     }
   }, [isOpen])
 
+  // Close on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      window.addEventListener('scroll', handleScroll, true)
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true)
+    }
+  }, [isOpen])
+
   return (
     <div className="relative inline-block">
       <button
@@ -84,7 +101,7 @@ export default function Tooltip({ term, explanation }: TooltipProps) {
         }}
         onMouseDown={(e) => e.stopPropagation()}
         onPointerDown={(e) => e.stopPropagation()}
-        className="w-5 h-5 rounded-full bg-gray-600 hover:bg-cyan-500 text-[11px] font-bold flex items-center justify-center text-white hover:text-white transition-colors cursor-pointer"
+        className="w-5 h-5 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-cyan-500 text-[11px] font-bold flex items-center justify-center text-white hover:text-white transition-colors cursor-pointer"
         aria-label={`Learn more about ${term}`}
       >
         ?
@@ -107,25 +124,25 @@ export default function Tooltip({ term, explanation }: TooltipProps) {
               className="z-[9999] w-72 sm:w-80"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="bg-gray-900 border border-gray-600 rounded-lg shadow-2xl p-4">
+              <div className="bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg shadow-2xl p-4">
                 {/* Arrow pointing up */}
                 <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-[-1px]">
-                  <div className="border-8 border-transparent border-b-gray-600" />
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 mb-[-1px] border-8 border-transparent border-b-gray-900" />
+                  <div className="border-8 border-transparent border-b-gray-300 dark:border-b-gray-600" />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 mb-[-1px] border-8 border-transparent border-b-white dark:border-b-gray-900" />
                 </div>
 
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="text-sm font-bold text-cyan-400">{term}</h4>
+                  <h4 className="text-sm font-bold text-cyan-600 dark:text-cyan-400">{term}</h4>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="text-gray-400 hover:text-white -mt-1 -mr-1 p-1"
+                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white -mt-1 -mr-1 p-1"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
                 </div>
-                <p className="text-xs text-gray-300 leading-relaxed">{explanation}</p>
+                <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">{explanation}</p>
               </div>
             </motion.div>
           )}
@@ -163,4 +180,16 @@ export const ragTerms: Record<string, string> = {
   'Temperature': 'Temperature controls randomness in LLM outputs. Values range from 0 (deterministic, always picks highest probability token) to 2 (very random). For RAG systems requiring factual accuracy, low temperatures (0-0.3) are preferred. Higher temperatures (0.7-1.0) suit creative tasks where variation is desired.',
 
   'Top-K': 'Top-K limits retrieval or generation to the K highest-scoring results. In retrieval, it controls how many chunks are passed to reranking or generation. In LLM sampling, it restricts token selection to the K most probable tokens. Lower K = more focused/deterministic; higher K = more diverse/exploratory.',
+
+  'Citation Check': 'Citation checking verifies that generated responses are properly grounded in retrieved sources. It extracts claims from the LLM output and matches them against retrieved chunks, ensuring each factual statement has supporting evidence. This prevents hallucinations and enables users to verify information by tracing claims back to source documents.',
+
+  'Faithfulness Check': 'Faithfulness evaluation uses an LLM-as-Judge approach to assess whether the generated response accurately reflects the retrieved context without adding unsupported information. The judge LLM scores responses on metrics like factual consistency, completeness, and relevance. Low faithfulness scores trigger regeneration or flagging for human review.',
+
+  'Policy Filter': 'Policy filtering scans generated responses for violations like PII exposure (names, emails, SSNs), toxic content, or domain-specific prohibited content. It uses pattern matching, ML classifiers, or API services to detect and either redact sensitive content or block responses entirely. Essential for compliance with privacy regulations and content policies.',
+
+  'Document Ingestion': 'Document ingestion is the entry point for the offline indexing pipeline. It handles loading documents from various sources (S3, databases, APIs, file systems), extracting text from different formats (PDF, DOCX, HTML), and normalizing content. It also extracts and preserves metadata like source, author, date, and permissions for downstream filtering.',
+
+  'Cache Write-Back': 'After generating a successful response, the system asynchronously writes the query embedding and result back to the semantic cache. This enables future similar queries to get instant cache hits, reducing latency and API costs. Write-back typically includes the query vector, retrieved chunks, and generated answer, with a TTL (time-to-live) for automatic expiration.',
+
+  'LLM Router': 'LLM routing adds a decision layer that selects the best model or task path based on the query. A lightweight classifier or small LLM analyzes intent, difficulty, safety level, and required context. Simple questions route to cheaper, faster models or cache, while complex or high-risk queries go to larger models or the full RAG workflow. This improves cost efficiency, latency, and answer quality.',
 }

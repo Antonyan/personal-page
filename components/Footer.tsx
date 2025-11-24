@@ -17,13 +17,17 @@ const quickLinks = [
   { name: 'Contact', href: '#contact' },
 ]
 
+const theoryLinks = [
+  { name: 'RAG Pipeline', href: '/rag-visualization', description: 'Interactive visualization' },
+]
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <motion.h3
@@ -95,6 +99,40 @@ export default function Footer() {
                   >
                     {link.name}
                   </a>
+                </li>
+              ))}
+            </motion.ul>
+          </div>
+
+          {/* Theory */}
+          <div>
+            <motion.h4
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-lg font-semibold text-white mb-4"
+            >
+              Theory
+            </motion.h4>
+            <motion.ul
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="space-y-2"
+            >
+              {theoryLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                  {link.description && (
+                    <p className="text-xs text-gray-500 mt-0.5">{link.description}</p>
+                  )}
                 </li>
               ))}
             </motion.ul>

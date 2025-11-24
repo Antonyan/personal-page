@@ -39,7 +39,7 @@ export default function RagControls({
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-4"
+          className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-800 rounded-xl p-4"
         >
           <div className="flex flex-wrap items-center justify-between gap-4">
             {/* Playback Controls */}
@@ -63,7 +63,7 @@ export default function RagControls({
               {/* Reset */}
               <button
                 onClick={onReset}
-                className="p-3 bg-gray-800 hover:bg-gray-700 text-gray-400 rounded-lg transition-colors"
+                className="p-3 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-lg transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -74,7 +74,7 @@ export default function RagControls({
               <button
                 onClick={onStepForward}
                 disabled={currentStep >= 6}
-                className="p-3 bg-gray-800 hover:bg-gray-700 text-gray-400 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="p-3 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
@@ -84,7 +84,7 @@ export default function RagControls({
 
             {/* Speed Control */}
             <div className="flex items-center space-x-3">
-              <span className="text-sm text-gray-400">Speed:</span>
+              <span className="text-sm text-gray-600 dark:text-gray-400">Speed:</span>
               <div className="flex space-x-1">
                 {[0.5, 1, 2].map((s) => (
                   <button
@@ -92,8 +92,8 @@ export default function RagControls({
                     onClick={() => onSpeedChange(s)}
                     className={`px-3 py-1 text-sm rounded-md transition-colors ${
                       speed === s
-                        ? 'bg-cyan-500/30 text-cyan-400'
-                        : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+                        ? 'bg-cyan-500/30 text-cyan-600 dark:text-cyan-400'
+                        : 'bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700'
                     }`}
                   >
                     {s}x
@@ -104,19 +104,19 @@ export default function RagControls({
 
             {/* Progress Indicator */}
             <div className="flex items-center space-x-3">
-              <span className="text-sm text-gray-400">Step:</span>
+              <span className="text-sm text-gray-600 dark:text-gray-400">Step:</span>
               <div className="flex items-center space-x-1">
                 {steps.map((step, i) => (
                   <div
                     key={step}
                     className={`w-2 h-2 rounded-full transition-colors ${
-                      i <= currentStep ? 'bg-cyan-400' : 'bg-gray-700'
+                      i <= currentStep ? 'bg-cyan-500 dark:bg-cyan-400' : 'bg-gray-300 dark:bg-gray-700'
                     }`}
                     title={step}
                   />
                 ))}
               </div>
-              <span className="text-sm text-cyan-400 font-mono">
+              <span className="text-sm text-cyan-600 dark:text-cyan-400 font-mono">
                 {steps[currentStep] || 'Ready'}
               </span>
             </div>
