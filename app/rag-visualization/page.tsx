@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import RagPipeline from '@/components/rag/RagPipeline'
@@ -12,6 +12,14 @@ export default function RagVisualizationPage() {
   const [currentStep, setCurrentStep] = useState(0)
   const [selectedModule, setSelectedModule] = useState<string | null>(null)
   const [viewMode, setViewMode] = useState<'simple' | 'production'>('simple')
+
+  // Check URL hash on mount to set initial view mode
+  useEffect(() => {
+    const hash = window.location.hash.slice(1) // Remove the '#'
+    if (hash === 'production') {
+      setViewMode('production')
+    }
+  }, [])
 
   const handlePlay = () => setIsPlaying(true)
   const handlePause = () => setIsPlaying(false)
@@ -64,7 +72,10 @@ export default function RagVisualizationPage() {
             <div className="flex justify-center mt-6">
               <div className="inline-flex bg-gray-200 dark:bg-gray-800 rounded-lg p-1">
                 <button
-                  onClick={() => setViewMode('simple')}
+                  onClick={() => {
+                    setViewMode('simple')
+                    window.history.pushState({}, '', '/rag-visualization')
+                  }}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     viewMode === 'simple'
                       ? 'bg-cyan-500 text-white'
@@ -74,7 +85,10 @@ export default function RagVisualizationPage() {
                   Simple
                 </button>
                 <button
-                  onClick={() => setViewMode('production')}
+                  onClick={() => {
+                    setViewMode('production')
+                    window.history.pushState({}, '', '/rag-visualization#production')
+                  }}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     viewMode === 'production'
                       ? 'bg-cyan-500 text-white'
