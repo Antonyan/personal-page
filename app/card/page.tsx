@@ -77,151 +77,166 @@ const contacts = [
 export default function CardPage() {
   return (
     <main className="min-h-screen bg-[#070a14] text-gray-100 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.18),transparent_55%),radial-gradient(circle_at_100%_100%,rgba(168,85,247,0.12),transparent_50%)]">
-      <div className="mx-auto flex w-full max-w-[440px] flex-col gap-5 px-4 pb-20 pt-8">
-        {/* Identity */}
-        <section className="flex flex-col items-center text-center">
-          <div className="rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-[3px] shadow-[0_0_40px_rgba(99,102,241,0.35)]">
-            <Image
-              src="/images/card-avatar.jpg"
-              alt="Artem Antonenko"
-              width={128}
-              height={128}
-              priority
-              className="h-32 w-32 rounded-full object-cover"
-            />
-          </div>
-          <h1 className="mt-5 text-3xl font-bold tracking-tight">Artem Antonenko</h1>
-          <p className="mt-1 text-lg font-semibold">
-            CTO of{' '}
+      <div className="mx-auto w-full max-w-[440px] px-4 pb-20 pt-8 md:max-w-3xl md:px-8 md:pt-12 lg:grid lg:max-w-6xl lg:grid-cols-[380px_minmax(0,1fr)] lg:items-start lg:gap-10 lg:pt-16">
+        <aside className="flex flex-col gap-5 lg:sticky lg:top-10">
+          {/* Identity */}
+          <section className="flex flex-col items-center text-center">
+            <div className="rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-[3px] shadow-[0_0_40px_rgba(99,102,241,0.35)]">
+              <Image
+                src="/images/card-avatar.jpg"
+                alt="Artem Antonenko"
+                width={160}
+                height={160}
+                priority
+                className="h-32 w-32 rounded-full object-cover md:h-40 md:w-40"
+              />
+            </div>
+            <h1 className="mt-5 text-3xl font-bold tracking-tight md:text-4xl lg:text-3xl">Artem Antonenko</h1>
+            <p className="mt-1 text-lg font-semibold md:text-xl lg:text-lg">
+              CTO of{' '}
+              <a
+                href="https://skillbourg.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+              >
+                Skillbourg.com
+              </a>
+            </p>
+            <p className="mt-1 text-sm text-gray-400">🇱🇺 Luxembourg · EU citizen · open to global work</p>
+            <div className="mt-4 flex flex-wrap justify-center gap-2">
+              {focusAreas.map((area) => (
+                <span
+                  key={area}
+                  className="rounded-full border border-blue-400/25 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-200"
+                >
+                  {area}
+                </span>
+              ))}
+            </div>
+            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-gray-300 md:text-base lg:text-[15px]">
+              I turn AI from demos into production systems and from pilots into company-wide results.
+              18 years of engineering leadership, now building an AI hiring platform where every match is
+              explainable and fair.
+            </p>
+          </section>
+
+          {/* Primary actions */}
+          <section className="grid gap-3 md:grid-cols-2 lg:grid-cols-1">
             <a
-              href="https://skillbourg.com"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+              className="flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-4 text-base font-semibold text-white shadow-lg shadow-blue-900/40 transition-transform hover:brightness-110 active:scale-[0.98]"
             >
-              Skillbourg.com
+              <Icon name="linkedin" className="h-5 w-5" />
+              Connect on LinkedIn
             </a>
-          </p>
-          <p className="mt-1 text-sm text-gray-400">🇱🇺 Luxembourg · EU citizen · open to global work</p>
-          <div className="mt-4 flex flex-wrap justify-center gap-2">
-            {focusAreas.map((area) => (
-              <span
-                key={area}
-                className="rounded-full border border-blue-400/25 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-200"
-              >
-                {area}
-              </span>
-            ))}
-          </div>
-          <p className="mt-5 text-[15px] leading-relaxed text-gray-300">
-            I turn AI from demos into production systems and from pilots into company-wide results.
-            18 years of engineering leadership, now building an AI hiring platform where every match is
-            explainable and fair.
-          </p>
-        </section>
+            <a
+              href="/artem-antonenko.vcf"
+              className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-5 py-4 text-base font-semibold text-white transition-colors hover:bg-white/10 active:scale-[0.98]"
+            >
+              <Icon name="contact" className="h-5 w-5" />
+              Save contact to phone
+            </a>
+            <p className="text-center text-xs text-gray-500 md:col-span-2 lg:col-span-1">
+              Opens directly in iOS and Android Contacts
+            </p>
+          </section>
 
-        {/* Primary actions */}
-        <section className="flex flex-col gap-3">
+          <ScanToConnect className="hidden lg:flex" />
+        </aside>
+
+        <div className="mt-5 flex flex-col gap-5 lg:mt-0">
+          {/* Proof */}
+          <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.value} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 md:p-5">
+                <div className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-2xl font-bold text-transparent md:text-3xl">
+                  {stat.value}
+                </div>
+                <div className="mt-1 text-xs leading-snug text-gray-400">{stat.label}</div>
+              </div>
+            ))}
+          </section>
+
+          {/* Now building */}
           <a
-            href={LINKEDIN_URL}
+            href="https://skillbourg.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-4 text-base font-semibold text-white shadow-lg shadow-blue-900/40 transition-transform active:scale-[0.98]"
+            className="block rounded-2xl border border-purple-400/25 bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-5 transition-colors hover:border-purple-400/50 md:p-6"
           >
-            <Icon name="linkedin" className="h-5 w-5" />
-            Connect on LinkedIn
+            <div className="text-xs font-semibold uppercase tracking-wider text-purple-300">Now building</div>
+            <div className="mt-2 text-lg font-semibold md:text-xl">Skillbourg.com →</div>
+            <p className="mt-1 text-sm leading-relaxed text-gray-300 md:text-[15px]">
+              AI-powered fair hiring platform for Europe. NLP matching scores every candidate-job pair on hard
+              skills, soft skills, eligibility and budget fit, and explains why. EU hosted, data never sold.
+            </p>
           </a>
-          <a
-            href="/artem-antonenko.vcf"
-            className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-5 py-4 text-base font-semibold text-white transition-colors hover:bg-white/10 active:scale-[0.98]"
-          >
-            <Icon name="contact" className="h-5 w-5" />
-            Save contact to phone
-          </a>
-          <p className="text-center text-xs text-gray-500">Opens directly in iOS and Android Contacts</p>
-        </section>
 
-        {/* Proof */}
-        <section className="grid grid-cols-2 gap-3">
-          {stats.map((stat) => (
-            <div key={stat.value} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-2xl font-bold text-transparent">
-                {stat.value}
-              </div>
-              <div className="mt-1 text-xs leading-snug text-gray-400">{stat.label}</div>
-            </div>
-          ))}
-        </section>
+          {/* Where I can help */}
+          <section className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 md:p-6">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-400">Where I can help</h2>
+            <ul className="mt-3 grid gap-4 md:mt-4 md:grid-cols-2 md:gap-x-8 md:gap-y-5">
+              {helpWith.map((item) => (
+                <li key={item.title} className="flex gap-3">
+                  <span className="mt-1.5 h-2 w-2 flex-none rounded-full bg-gradient-to-br from-blue-400 to-purple-400" />
+                  <div>
+                    <div className="text-sm font-semibold text-white">{item.title}</div>
+                    <div className="mt-0.5 text-sm leading-relaxed text-gray-400">{item.text}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-        {/* Now building */}
-        <a
-          href="https://skillbourg.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block rounded-2xl border border-purple-400/25 bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-5 transition-colors hover:border-purple-400/50"
-        >
-          <div className="text-xs font-semibold uppercase tracking-wider text-purple-300">Now building</div>
-          <div className="mt-2 text-lg font-semibold">Skillbourg.com →</div>
-          <p className="mt-1 text-sm leading-relaxed text-gray-300">
-            AI-powered fair hiring platform for Europe. NLP matching scores every candidate-job pair on hard
-            skills, soft skills, eligibility and budget fit, and explains why. EU hosted, data never sold.
-          </p>
-        </a>
-
-        {/* Where I can help */}
-        <section className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-400">Where I can help</h2>
-          <ul className="mt-3 flex flex-col gap-4">
-            {helpWith.map((item) => (
-              <li key={item.title} className="flex gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-none rounded-full bg-gradient-to-br from-blue-400 to-purple-400" />
-                <div>
-                  <div className="text-sm font-semibold text-white">{item.title}</div>
-                  <div className="mt-0.5 text-sm leading-relaxed text-gray-400">{item.text}</div>
-                </div>
-              </li>
+          {/* Direct contacts: one list on mobile, tiles from tablet up */}
+          <section className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] md:grid md:grid-cols-2 md:gap-3 md:overflow-visible md:rounded-none md:border-0 md:bg-transparent">
+            {contacts.map((contact) => (
+              <a
+                key={contact.label}
+                href={contact.href}
+                target={contact.external ? '_blank' : undefined}
+                rel={contact.external ? 'noopener noreferrer' : undefined}
+                download={contact.download ? true : undefined}
+                className="flex items-center gap-4 border-t border-white/5 px-5 py-4 transition-colors first:border-t-0 hover:bg-white/5 md:rounded-2xl md:border md:border-white/10 md:bg-white/[0.04] md:first:border-t md:last:col-span-2 md:hover:bg-white/[0.08]"
+              >
+                <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-white/5 text-blue-300">
+                  <Icon name={contact.icon} className="h-5 w-5" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-white">{contact.label}</span>
+                  <span className="block truncate text-xs text-gray-400">{contact.detail}</span>
+                </span>
+                <span className="text-gray-500">›</span>
+              </a>
             ))}
-          </ul>
-        </section>
+          </section>
 
-        {/* Direct contacts */}
-        <section className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
-          {contacts.map((contact, index) => (
-            <a
-              key={contact.label}
-              href={contact.href}
-              target={contact.external ? '_blank' : undefined}
-              rel={contact.external ? 'noopener noreferrer' : undefined}
-              download={contact.download ? true : undefined}
-              className={`flex items-center gap-4 px-5 py-4 transition-colors hover:bg-white/5 ${
-                index > 0 ? 'border-t border-white/5' : ''
-              }`}
-            >
-              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-white/5 text-blue-300">
-                <Icon name={contact.icon} className="h-5 w-5" />
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-semibold text-white">{contact.label}</span>
-                <span className="block truncate text-xs text-gray-400">{contact.detail}</span>
-              </span>
-              <span className="text-gray-500">›</span>
-            </a>
-          ))}
-        </section>
-
-        {/* Scan to connect */}
-        <section className="flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-400">Scan to connect</h2>
-          <div className="rounded-2xl bg-white p-3">
-            <Image src="/images/card-qr.svg" alt="QR code for artem-antonenko.com/card" width={200} height={200} unoptimized />
-          </div>
-          <p className="text-center text-xs text-gray-500">Point a phone camera at the code. Turn screen brightness up for a faster scan.</p>
-          <div className="w-full">
-            <ShareButtons />
-          </div>
-        </section>
+          <ScanToConnect className="flex lg:hidden" />
+        </div>
       </div>
     </main>
+  )
+}
+
+function ScanToConnect({ className }: { className: string }) {
+  return (
+    <section
+      className={`${className} flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5`}
+    >
+      <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-400">Scan to connect</h2>
+      <div className="rounded-2xl bg-white p-3">
+        <Image src="/images/card-qr.svg" alt="QR code for artem-antonenko.com/card" width={200} height={200} unoptimized />
+      </div>
+      <p className="text-center text-xs text-gray-500">
+        Point a phone camera at the code. Turn screen brightness up for a faster scan.
+      </p>
+      <div className="w-full">
+        <ShareButtons />
+      </div>
+    </section>
   )
 }
 
