@@ -4,7 +4,9 @@ import Image from 'next/image'
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion'
 import type { PointerEvent } from 'react'
 
-const MAX_POINTER_TILT = 14
+const MAX_POINTER_TILT = 10
+// Medallion thickness in px, built from 1px layers behind the face
+const EDGE_LAYERS = 18
 
 export default function Avatar3D() {
   const reduceMotion = useReducedMotion()
@@ -53,33 +55,55 @@ export default function Avatar3D() {
           animate={
             reduceMotion
               ? undefined
-              : { rotateY: [-8, 8, -8], rotateX: [3, -3, 3], y: [0, -4, 0] }
+              : { rotateY: [-24, 24, -24], rotateX: [4, -4, 4], y: [0, -4, 0] }
           }
-          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-          className="relative rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-[3px] shadow-[0_0_40px_rgba(99,102,241,0.35)]"
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          className="relative rounded-full"
         >
-          <div className="relative overflow-hidden rounded-full">
-            <Image
-              src="/images/card-avatar.jpg"
-              alt="Artem Antonenko"
-              width={160}
-              height={160}
-              priority
-              className="h-32 w-32 rounded-full object-cover md:h-40 md:w-40"
+          {/* Side edge: stacked discs that show up as the medallion turns */}
+          {Array.from({ length: EDGE_LAYERS }, (_, index) => (
+            <div
+              key={index}
+              aria-hidden="true"
+              className="absolute inset-0 rounded-full"
+              style={{
+                transform: `translateZ(${-(index + 1)}px)`,
+                background: edgeShade(index / (EDGE_LAYERS - 1)),
+              }}
             />
-            {/* Light sweep across the photo */}
-            {!reduceMotion && (
-              <motion.div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-[linear-gradient(110deg,transparent_35%,rgba(255,255,255,0.28)_50%,transparent_65%)]"
-                initial={{ x: '-120%' }}
-                animate={{ x: ['-120%', '120%'] }}
-                transition={{ duration: 1.6, ease: 'easeInOut', repeat: Infinity, repeatDelay: 5.4, delay: 1.2 }}
+          ))}
+
+          {/* Face */}
+          <div className="relative rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-[3px] shadow-[0_0_40px_rgba(99,102,241,0.35)] [transform:translateZ(0.5px)]">
+            <div className="relative overflow-hidden rounded-full">
+              <Image
+                src="/images/card-avatar.jpg"
+                alt="Artem Antonenko"
+                width={160}
+                height={160}
+                priority
+                className="h-32 w-32 rounded-full object-cover md:h-40 md:w-40"
               />
-            )}
+              {/* Light sweep across the photo */}
+              {!reduceMotion && (
+                <motion.div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-[linear-gradient(110deg,transparent_35%,rgba(255,255,255,0.28)_50%,transparent_65%)]"
+                  initial={{ x: '-120%' }}
+                  animate={{ x: ['-120%', '120%'] }}
+                  transition={{ duration: 1.6, ease: 'easeInOut', repeat: Infinity, repeatDelay: 6.4, delay: 1.2 }}
+                />
+              )}
+            </div>
           </div>
         </motion.div>
       </motion.div>
     </div>
   )
+}
+
+// Graphite metal edge: lit band in the middle, darker towards the back
+function edgeShade(depth: number) {
+  const l = Math.round(46 - depth * 22)
+  return `linear-gradient(90deg, hsl(228 14% ${l - 16}%), hsl(228 12% ${l}%) 30%, hsl(225 18% ${l + 22}%) 50%, hsl(228 12% ${l}%) 70%, hsl(228 14% ${l - 16}%))`
 }
