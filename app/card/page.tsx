@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Image from 'next/image'
+import Avatar3D from './Avatar3D'
 import ShareButtons from './ShareButtons'
 
 export const metadata: Metadata = {
@@ -81,17 +82,8 @@ export default function CardPage() {
         <aside className="flex flex-col gap-5 lg:sticky lg:top-10">
           {/* Identity */}
           <section className="flex flex-col items-center text-center">
-            <div className="rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-[3px] shadow-[0_0_40px_rgba(99,102,241,0.35)]">
-              <Image
-                src="/images/card-avatar.jpg"
-                alt="Artem Antonenko"
-                width={160}
-                height={160}
-                priority
-                className="h-32 w-32 rounded-full object-cover md:h-40 md:w-40"
-              />
-            </div>
-            <h1 className="mt-5 text-3xl font-bold tracking-tight md:text-4xl lg:text-3xl">Artem Antonenko</h1>
+            <Avatar3D />
+            <h1 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl lg:text-3xl">Artem Antonenko</h1>
             <p className="mt-1 text-lg font-semibold md:text-xl lg:text-lg">
               CTO of{' '}
               <a
