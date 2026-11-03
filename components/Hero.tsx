@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 const roles = [
+  'Co-founder & CTO, Skillbourg',
+  'Applied ML: LLM extraction, ranking, evaluation',
   'Engineering & AI Transformation Executive',
-  'Head of Engineering | Product & Org Scale',
-  'AI-Enabled Delivery & Engineering Leadership',
 ]
 
 export default function Hero() {
@@ -42,8 +42,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Building High-Performing Engineering Teams and Products, Powered by{' '}
-            <span className="gradient-text">Practical AI Adoption</span>
+            Building{' '}
+            <span className="gradient-text">production AI systems</span>{' '}
+            and the engineering teams that ship them
           </motion.h1>
 
           <motion.div
@@ -71,9 +72,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Leading enterprise AI transformation across 500+ professionals (300+ engineers, BAs, POs, designers) and 12 companies.
-            Delivering 8x ROI, 60-70% workload reduction, and measurable business impact
-            through strategic AI implementation and technical excellence.
+            Co-founder and CTO of Skillbourg, an AI recruiting platform: LLM-based CV extraction,
+            learning-to-rank in production, bias testing in a regulatory sandbox, and a PRICAI 2026
+            paper on evaluating LLM extractors. Before that, I led AI adoption across 12 companies
+            and 500+ professionals, with 8x ROI on the AI engineering program.
           </motion.p>
 
           {/* CTA Buttons - UX Hierarchy: Primary (filled) drives main business objective, Secondary (outlined) offers low-commitment exploration */}
@@ -102,6 +104,15 @@ export default function Hero() {
               className="px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-full font-semibold hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
             >
               View Case Studies
+            </motion.a>
+            {/* ML and research work */}
+            <motion.a
+              href="/ml"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-full font-semibold hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
+            >
+              ML &amp; Research
             </motion.a>
             {/* Tertiary CTA: Download CV - For recruiters and hiring managers */}
             <motion.a

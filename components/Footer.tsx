@@ -10,11 +10,12 @@ const socialLinks = [
 ]
 
 const quickLinks = [
-  { name: 'Impact', href: '#impact' },
-  { name: 'Case Studies', href: '#case-studies' },
-  { name: 'Technical DNA', href: '#technical' },
-  { name: 'Leadership', href: '#leadership' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Impact', href: '/#impact' },
+  { name: 'Case Studies', href: '/#case-studies' },
+  { name: 'ML & Research', href: '/ml' },
+  { name: 'Technical DNA', href: '/#technical' },
+  { name: 'Leadership', href: '/#leadership' },
+  { name: 'Contact', href: '/#contact' },
 ]
 
 const theoryLinks = [

@@ -4,11 +4,12 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const navItems = [
-  { name: 'Impact', href: '#impact' },
-  { name: 'Case Studies', href: '#case-studies' },
-  { name: 'Technical DNA', href: '#technical' },
-  { name: 'Leadership', href: '#leadership' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Impact', href: '/#impact' },
+  { name: 'Case Studies', href: '/#case-studies' },
+  { name: 'ML & Research', href: '/ml' },
+  { name: 'Technical DNA', href: '/#technical' },
+  { name: 'Leadership', href: '/#leadership' },
+  { name: 'Contact', href: '/#contact' },
 ]
 
 export default function Navigation() {
@@ -37,7 +38,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.a
-            href="#"
+            href="/"
             whileHover={{ scale: 1.05 }}
             className="text-xl font-bold gradient-text"
           >
