@@ -4,19 +4,20 @@ import CookieConsent from '@/components/CookieConsent'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.artem-antonenko.com'),
-  title: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
-  description: 'Engineering Executive specializing in organizational scale, delivery excellence, and AI-enabled performance acceleration. Led 500+ professionals across 12 companies, delivering 8× ROI and measurable business impact.',
+  title: 'Artem Antonenko | AI-native CTO, Skillbourg | LLM extraction and ranking',
+  description: 'CTO of Skillbourg. LLM extraction, learning-to-rank and bias testing in production. Software dark factories: autonomous development with AI agents. Co-author of ResumeParsingBench (PRICAI 2026). 20 years in engineering leadership.',
   keywords: [
-    'Engineering Executive',
-    'Head of Engineering',
+    'AI-native CTO',
     'CTO',
+    'Applied ML',
+    'LLM extraction',
+    'Learning to rank',
+    'LLM evaluation',
+    'Bias testing',
+    'Software dark factory',
+    'AI agents',
     'AI Transformation',
-    'Delivery Excellence',
-    'Organizational Scale',
-    'Technical Leadership',
-    'Enterprise Engineering',
-    'AI Integration',
-    'Technology Strategy'
+    'Engineering Leadership'
   ],
   authors: [{ name: 'Artem Antonenko' }],
   icons: {
@@ -34,26 +35,26 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
-    description: 'Engineering Executive specializing in organizational scale, delivery excellence, and AI-enabled performance acceleration. Led 500+ professionals across 12 companies, delivering 8× ROI and measurable business impact.',
+    title: 'Artem Antonenko | AI-native CTO, Skillbourg | LLM extraction and ranking',
+    description: 'CTO of Skillbourg. LLM extraction, learning-to-rank and bias testing in production. Software dark factories: autonomous development with AI agents. Co-author of ResumeParsingBench (PRICAI 2026). 20 years in engineering leadership.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.artem-antonenko.com',
-    siteName: 'Artem Antonenko - Engineering Executive Portfolio',
+    siteName: 'Artem Antonenko',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 800,
-        alt: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
+        alt: 'Artem Antonenko | AI-native CTO, Skillbourg | LLM extraction and ranking',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance',
-    description: 'Engineering Executive specializing in organizational scale, delivery excellence, and AI-enabled performance acceleration. 500+ professionals led, 8× ROI.',
+    title: 'Artem Antonenko | AI-native CTO, Skillbourg | LLM extraction and ranking',
+    description: 'CTO of Skillbourg. LLM extraction, learning-to-rank and bias testing in production. Software dark factories: autonomous development with AI agents. Co-author of ResumeParsingBench (PRICAI 2026). 20 years in engineering leadership.',
     images: ['/og-image.jpg'],
   },
   robots: {

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Applied ML and AI Safety Work | Artem Antonenko',
   description:
-    'Co-founder and CTO of Skillbourg. LLM extraction, learning-to-rank, LLM-generated labels, counterfactual bias testing and prompt-injection robustness. Co-author of ResumeParsingBench (PRICAI 2026).',
+    'CTO of Skillbourg. LLM extraction, learning-to-rank, LLM-generated labels, counterfactual bias testing and prompt-injection robustness. Co-author of ResumeParsingBench (PRICAI 2026).',
   alternates: { canonical: '/ml' },
   openGraph: {
     title: 'Applied ML and AI Safety Work | Artem Antonenko',
@@ -174,7 +174,7 @@ export default function MLPage() {
           </h1>
           <div className="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400">
             <p>
-              I am co-founder and CTO of Skillbourg, an AI recruiting platform built by RMT Labs in
+              I am CTO of Skillbourg, an AI recruiting platform built by RMT Labs in
               Luxembourg. I lead its ML stack: LLM extraction of CVs, retrieval and learning-to-rank,
               LLM-generated training labels, bias testing and AI-led voice interviews.
             </p>
@@ -333,7 +333,7 @@ export default function MLPage() {
             <Card>
               <h2 className="text-xl font-semibold mb-4">Background</h2>
               <ul className="space-y-3 text-gray-600 dark:text-gray-400">
-                <li>18+ years in software engineering, from C++ CAD extensions to leading 100+ engineers.</li>
+                <li>20+ years in software engineering, from C++ CAD extensions to leading 100+ engineers.</li>
                 <li>MSc, Aircraft Engineering, National Aerospace University (Ukraine).</li>
                 <li>AI Strategy, MIT Sloan Executive Education, 2025.</li>
                 <li>Agentic AI, DeepLearning.AI, 2025.</li>

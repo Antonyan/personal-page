@@ -40,7 +40,7 @@ const focusAreas = [
 ]
 
 const stats = [
-  { value: '18+', label: 'years building engineering orgs' },
+  { value: '20+', label: 'years building engineering orgs' },
   { value: '500+', label: 'engineers led through AI adoption' },
   { value: '12', label: 'companies transformed' },
   { value: '50M+', label: 'daily users on systems I ran' },
@@ -108,7 +108,7 @@ export default function CardPage() {
             </div>
             <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-gray-300 md:text-base lg:text-[15px]">
               I turn AI from demos into production systems and from pilots into company-wide results.
-              18 years of engineering leadership, now building an AI hiring platform where every match is
+              20 years of engineering leadership, now building an AI hiring platform where every match is
               explainable and fair.
             </p>
           </section>

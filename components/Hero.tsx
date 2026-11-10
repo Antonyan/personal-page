@@ -1,25 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
-const roles = [
-  'Co-founder & CTO, Skillbourg',
-  'Applied ML: LLM extraction, ranking, evaluation',
-  'Engineering & AI Transformation Executive',
-]
-
 export default function Hero() {
-  const [currentRole, setCurrentRole] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 md:pt-20 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
       {/* Animated background */}
@@ -42,29 +26,19 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Building{' '}
-            <span className="gradient-text">production AI systems</span>{' '}
-            and the engineering teams that ship them
+            I build{' '}
+            <span className="gradient-text">LLM extraction and ranking systems</span>, and measure
+            whether they work
           </motion.h1>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="h-16 md:h-20"
+            className="text-xl md:text-2xl font-semibold text-blue-600 dark:text-blue-400"
           >
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
-              <motion.span
-                key={currentRole}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                className="font-semibold text-blue-600 dark:text-blue-400"
-              >
-                {roles[currentRole]}
-              </motion.span>
-            </p>
-          </motion.div>
+            AI-native CTO
+          </motion.p>
 
           <motion.p
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
@@ -72,10 +46,11 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Co-founder and CTO of Skillbourg, an AI recruiting platform: LLM-based CV extraction,
-            learning-to-rank in production, bias testing in a regulatory sandbox, and a PRICAI 2026
-            paper on evaluating LLM extractors. Before that, I led AI adoption across 12 companies
-            and 500+ professionals, with 8x ROI on the AI engineering program.
+            CTO of Skillbourg, an AI recruiting platform: LLM-based CV extraction, learning-to-rank in
+            production, bias testing in a regulatory sandbox, and a PRICAI 2026 paper on evaluating LLM
+            extractors. I also build software dark factories, where AI agents develop software
+            autonomously. Before Skillbourg, I led AI adoption across 12 companies and 500+
+            professionals, with 8x ROI on the AI engineering program.
           </motion.p>
 
           {/* CTA Buttons - UX Hierarchy: Primary (filled) drives main business objective, Secondary (outlined) offers low-commitment exploration */}
@@ -182,7 +157,7 @@ export default function Hero() {
               <div className="w-full h-full rounded-3xl overflow-hidden bg-white dark:bg-gray-900">
                 <Image
                   src="/images/profile.jpg"
-                  alt="Artem Antonenko – Engineering Executive | Scale, Delivery, and AI-Enabled Performance"
+                  alt="Artem Antonenko, AI-native CTO of Skillbourg"
                   width={450}
                   height={550}
                   className="object-cover w-full h-full"
