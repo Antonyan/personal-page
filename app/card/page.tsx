@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import Image from 'next/image'
 import Avatar3D from './Avatar3D'
 import ShareButtons from './ShareButtons'
+import LinkedInButton from './LinkedInButton'
 
 export const metadata: Metadata = {
   title: 'Artem Antonenko – CTO of Skillbourg.com',
@@ -28,7 +29,6 @@ export const viewport: Viewport = {
   themeColor: '#070a14',
 }
 
-const LINKEDIN_URL = 'https://www.linkedin.com/in/artem-antonenko-al/'
 const WHATSAPP_URL = `https://wa.me/352661367192?text=${encodeURIComponent('Hi Artem, nice to meet you! ')}`
 const EMAIL_URL = `mailto:antonenko.artem@gmail.com?subject=${encodeURIComponent('Nice to meet you')}`
 
@@ -115,15 +115,10 @@ export default function CardPage() {
 
           {/* Primary actions */}
           <section className="grid gap-3 md:grid-cols-2 lg:grid-cols-1">
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-4 text-base font-semibold text-white shadow-lg shadow-blue-900/40 transition-transform hover:brightness-110 active:scale-[0.98]"
-            >
+            <LinkedInButton className="flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-4 text-base font-semibold text-white shadow-lg shadow-blue-900/40 transition-transform hover:brightness-110 active:scale-[0.98]">
               <Icon name="linkedin" className="h-5 w-5" />
               Connect on LinkedIn
-            </a>
+            </LinkedInButton>
             <a
               href="/artem-antonenko.vcf"
               className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-5 py-4 text-base font-semibold text-white transition-colors hover:bg-white/10 active:scale-[0.98]"
