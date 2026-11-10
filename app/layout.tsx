@@ -4,7 +4,7 @@ import CookieConsent from '@/components/CookieConsent'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.artem-antonenko.com'),
-  title: 'Artem Antonenko | AI-native CTO, Skillbourg | LLM extraction and ranking',
+  title: 'Artem Antonenko | AI-native CTO | Agentic AI and information retrieval',
   description: 'CTO of Skillbourg. LLM extraction, learning-to-rank and bias testing in production. Software dark factories: autonomous development with AI agents. Co-author of ResumeParsingBench (PRICAI 2026). 20 years in engineering leadership.',
   keywords: [
     'AI-native CTO',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Artem Antonenko | AI-native CTO, Skillbourg | LLM extraction and ranking',
+    title: 'Artem Antonenko | AI-native CTO | Agentic AI and information retrieval',
     description: 'CTO of Skillbourg. LLM extraction, learning-to-rank and bias testing in production. Software dark factories: autonomous development with AI agents. Co-author of ResumeParsingBench (PRICAI 2026). 20 years in engineering leadership.',
     type: 'website',
     locale: 'en_US',
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 800,
-        alt: 'Artem Antonenko | AI-native CTO, Skillbourg | LLM extraction and ranking',
+        alt: 'Artem Antonenko | AI-native CTO | Agentic AI and information retrieval',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Artem Antonenko | AI-native CTO, Skillbourg | LLM extraction and ranking',
+    title: 'Artem Antonenko | AI-native CTO | Agentic AI and information retrieval',
     description: 'CTO of Skillbourg. LLM extraction, learning-to-rank and bias testing in production. Software dark factories: autonomous development with AI agents. Co-author of ResumeParsingBench (PRICAI 2026). 20 years in engineering leadership.',
     images: ['/og-image.jpg'],
   },

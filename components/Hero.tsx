@@ -26,9 +26,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            I build{' '}
-            <span className="gradient-text">LLM extraction and ranking systems</span>, and measure
-            whether they work
+            Building and operating{' '}
+            <span className="gradient-text">agentic AI systems</span> and information retrieval
+            pipelines in production
           </motion.h1>
 
           <motion.p
